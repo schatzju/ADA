@@ -1,0 +1,68 @@
+<html><head> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script> 
+<script> 
+var accessToken = "031f8347038c657b273c91fb2942c5f7a0bf5385"; 
+var deviceID = "570050000b51353335323535"; 
+var url = "https://api.spark.io/v1/devices/" + deviceID 
+          + "/forwardBack"; 
+
+function forward(){  
+    $.post(url, {params: "forward", access_token: accessToken }); 
+} 
+function back(){  
+    $.post(url, {params: "backward", access_token: accessToken }); 
+}
+function stop(){  
+    $.post(url, {params: "stop", access_token: accessToken }); 
+}
+function left(){  
+    $.post(url, {params: "left", access_token: accessToken });
+}
+function right(){  
+    $.post(url, {params: "right", access_token: accessToken });
+}
+// function foo(){
+// 	var textInput = document.getElementById("textInput").value;
+// 	var textArray = textInput.split(" ");
+// 	var instructionArray = []
+
+// 	var forwardThreshold = 0.25;
+// 	var backThreshold = 0.5;
+// 	var leftThreshold = 0.75;
+
+// 	var num;
+// 	for(var i = 0; i < textArray.length; i++){
+// 		num = Math.random();
+// 		if(num < forwardThreshold){
+// 			instructionArray.push(0);
+// 		} else if(num < backThreshold){
+// 			instructionArray.push(1);
+// 		} else if(num < leftThreshold){
+// 			instructionArray.push(2);
+// 		} else {
+// 			instructionArray.push(3);
+// 		}
+// 	}
+
+// 	// $.post(url, {params: instructionArray, access_token: accessToken });
+// 	console.log(instructionArray);
+// }
+
+
+</script>
+<title>ADA</title>
+</head> 
+
+<body>
+<h1>Tell ADA which way to go!</h1>
+<input type="button" onClick="forward()" value="Left Wheel Pivot"/>
+<input type="button" onClick="back()" value ="Forward"/>
+<input type="button" onClick="stop()" value ="Stop"/>
+<input type="button" onClick="left()" value ="Right"/>
+<input type="button" onClick="right()" value ="Left Center Pivot"/>
+
+
+
+<!-- <textarea id="textInput" placeholder="Pour out your feelings to ADA"></textarea>
+<button onclick="foo()">Tell ADA!</button> -->
+</body></html>
